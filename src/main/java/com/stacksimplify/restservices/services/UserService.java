@@ -62,7 +62,7 @@ public class UserService {
 		}
 
 		
-		user.setId(id);
+		user.setUserid(id);;
 		return userRepository.save(user);
 
 	}
