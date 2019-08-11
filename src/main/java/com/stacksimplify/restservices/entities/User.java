@@ -59,6 +59,9 @@ public class User extends ResourceSupport {
 	@JsonView(Views.Internal.class)
 	private List<Order> orders;
 
+	@Column(name = "ADDRESS")
+	private String address;
+	
 	// No Argument Constructor
 	public User() {
 	}
@@ -67,7 +70,7 @@ public class User extends ResourceSupport {
 	public User(Long userid,
 			@NotEmpty(message = "Username is Mandatory field. Please provide username") String username,
 			@Size(min = 2, message = "FirstName should have atleast 2 characters") String firstname, String lastname,
-			String email, String role, String ssn, List<Order> orders) {
+			String email, String role, String ssn, List<Order> orders, String address) {
 		super();
 		this.userid = userid;
 		this.username = username;
@@ -77,12 +80,17 @@ public class User extends ResourceSupport {
 		this.role = role;
 		this.ssn = ssn;
 		this.orders = orders;
+		this.address = address;
 	}
+	
+	
 	// Getters and Setters
 
 	public Long getUserid() {
 		return userid;
 	}
+
+
 
 	public void setUserid(Long userid) {
 		this.userid = userid;
@@ -144,12 +152,28 @@ public class User extends ResourceSupport {
 		this.orders = orders;
 	}
 
-	// To String
+	
+	
+	
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	// To String
 	@Override
 	public String toString() {
 		return "User [userid=" + userid + ", username=" + username + ", firstname=" + firstname + ", lastname="
-				+ lastname + ", email=" + email + ", role=" + role + ", ssn=" + ssn + ", orders=" + orders + "]";
+				+ lastname + ", email=" + email + ", role=" + role + ", ssn=" + ssn + ", orders=" + orders
+				+ ", address=" + address + "]";
 	}
+	
+	
+
+
 
 }
