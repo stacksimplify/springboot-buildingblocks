@@ -87,7 +87,22 @@
 		    <groupId>de.codecentric</groupId>
 		    <artifactId>spring-boot-admin-starter-client</artifactId>
 		    <version>2.1.6</version>
-		</dependency>   			      	
+		</dependency>   
+		<dependency>
+		    <groupId>io.micrometer</groupId>
+		    <artifactId>micrometer-core</artifactId>
+		    <version>1.2.0</version>
+		</dependency>	
+	    <dependency>
+		  <groupId>io.micrometer</groupId>
+		  <artifactId>micrometer-registry-jmx</artifactId>
+		  <version>1.2.0</version>
+		</dependency>	
+		<dependency>
+		  <groupId>io.micrometer</groupId>
+		  <artifactId>micrometer-registry-appoptics</artifactId>
+		  <version>1.2.0</version>
+		</dependency>										      	
 	</dependencies>
 
 	<build>
